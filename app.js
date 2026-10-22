@@ -19,6 +19,14 @@ app.get('/v1/hi', function(req, res) {
     res.status(200).json(out)
 })
 
+app.get('/v1/hi/user/:name', function(req, res) {
+    const out = {
+        out: `Hello, ${req.params.name}`
+    }
+    console.log(`GET /v1/hi/user/${req.params.name}:`, out)
+    res.status(200).json(out)
+})
+
 app.get('/v1/hi/:name', function(req, res) {
     const out = {
         msg: "Hello, " + req.params.name.toUpperCase()
